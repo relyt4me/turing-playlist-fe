@@ -19,4 +19,6 @@ describe('Song From Component', () => {
     expect(inputs.length).toEqual(3);
     expect(addSongButton).toBeInTheDocument();
   });
+
+  it('Should change the input as the form is filled out', () => {});
 });
