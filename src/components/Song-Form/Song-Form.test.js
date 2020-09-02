@@ -24,9 +24,15 @@ describe('Song From Component', () => {
     render(<SongForm addToPlaylist={jest.fn()} />);
 
     const inputForName = screen.getByPlaceholderText('Name');
+    const inputForArtist = screen.getByPlaceholderText('Artist');
+    const inputForLink = screen.getByPlaceholderText('Link');
 
     fireEvent.change(inputForName, { target: { value: 'King' } });
+    fireEvent.change(inputForArtist, { target: { value: 'Years and Years' } });
+    fireEvent.change(inputForLink, { target: { value: 'www.google.com' } });
 
     expect(inputForName.value).toBe('King');
+    expect(inputForArtist.value).toBe('Years and Years');
+    expect(inputForLink.value).toBe('www.google.com');
   });
 });
