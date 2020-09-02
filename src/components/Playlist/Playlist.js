@@ -10,7 +10,8 @@ const Playlist({songs}) => {
 
   return (
     <section className='playlist'>
-      <h2 className='playlist-title'></h2>
+      <h2 className='playlist-title'>My Playlist</h2>
+      {songCards}
     </section>
   )
 }
