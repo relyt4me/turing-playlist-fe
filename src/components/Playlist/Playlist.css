@@ -13,4 +13,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 25px;
+  height: 200px;
+  overflow-y: scroll;
 }
