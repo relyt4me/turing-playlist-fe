@@ -1,5 +1,6 @@
 import React from 'react';
 import SongCard from '../Song-card/Song-card';
+import './Playlist.css';
 
 const Playlist = ({ songs }) => {
   const songCards = songs.map((song) => {
