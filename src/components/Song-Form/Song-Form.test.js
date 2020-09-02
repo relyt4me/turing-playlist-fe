@@ -1,6 +1,6 @@
 import React from 'react';
 import SongForm from './Song-From';
-import { screen, render } from '@testing-library/react';
+import { screen, render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 describe('Song From Component', () => {
@@ -20,5 +20,13 @@ describe('Song From Component', () => {
     expect(addSongButton).toBeInTheDocument();
   });
 
-  it('Should change the input as the form is filled out', () => {});
+  it('Should change the input as the form is filled out', () => {
+    render(<SongForm addToPlaylist={jest.fn()} />);
+
+    const inputForName = screen.getByPlaceholderText('Name');
+
+    fireEvent.change(inputForName, { target: { value: 'King' } });
+
+    expect(inputForName.value).toBe('King');
+  });
 });
