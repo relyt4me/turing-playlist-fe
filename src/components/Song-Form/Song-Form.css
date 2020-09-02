@@ -2,8 +2,14 @@
   display: grid;
   grid-gap: 10px;
   width: 40vw;
-  padding: 10px;
+  justify-items: center;
+  color: white;
+  background-color: black;
+  padding: 1em;
+  border-radius: 1em;
+  margin-top: 15px;
 }
 
-label {
+input {
+  width: 25vw;
 }
