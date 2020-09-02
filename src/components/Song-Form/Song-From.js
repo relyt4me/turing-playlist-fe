@@ -11,7 +11,8 @@ class SongForm extends Component {
     };
   }
 
-  convertAndAddSong = () => {
+  convertAndAddSong = (event) => {
+    event.preventDefault();
     const { songName, songArtist, songLink } = this.state;
     const song = { songName: songName, artistName: songArtist, link: songLink };
     this.props.addToPlaylist(song);
