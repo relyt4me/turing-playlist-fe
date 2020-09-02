@@ -11,6 +11,12 @@ class SongForm extends Component {
     };
   }
 
+  convertAndAddSong = () => {
+    const { songName, songArtist, songLink } = this.state;
+    const song = { songName: songName, artistName: songArtist, link: songLink };
+    this.props.addToPlaylist(song);
+  };
+
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -25,7 +31,7 @@ class SongForm extends Component {
         <input type='text' placeholder='Artist' name='songArtist' value={songArtist} onChange={(event) => this.handleChange(event)} />
         <label htmlFor='songLink'>Song Link</label>
         <input type='text' placeholder='Link' name='songLink' value={songLink} onChange={(event) => this.handleChange(event)} />
-        <button>Add Song</button>
+        <button onClick={this.convertAndAddSong}>Add Song</button>
       </form>
     );
   }
