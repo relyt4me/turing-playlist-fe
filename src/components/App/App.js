@@ -22,6 +22,10 @@ class App extends Component {
       .catch((error) => this.setState({ error: 'Something went wrong' }));
   }
 
+  addToPlaylist = (song) => {
+    this.setState({ songQueue: [...this.state.songQueue, song] });
+  };
+
   render() {
     const { songQueue, error } = this.state;
     return (
@@ -31,7 +35,7 @@ class App extends Component {
         </header>
         <div className='App-background'>
           <main>
-            <SongForm />
+            <SongForm addToPlaylist={this.addToPlaylist} />
             {error && <h1>{error}</h1>}
             <Playlist songs={songQueue} />
           </main>
