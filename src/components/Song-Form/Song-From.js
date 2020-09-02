@@ -11,16 +11,20 @@ class SongForm extends Component {
     };
   }
 
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
   render() {
     const { songName, songArtist, songLink } = this.state;
     return (
       <form className='song-form'>
-        <label htmlFor='song-name'>Song Name</label>
-        <input type='text' placeholder='Name' name='song-name' value={songName} />
-        <label htmlFor='song-artist'>Song Artist</label>
-        <input type='text' placeholder='Artist' name='song-artist' value={songArtist} />
-        <label htmlFor='song-link'>Song Link</label>
-        <input type='text' placeholder='Link' name='song-link' value={songLink} />
+        <label htmlFor='songName'>Song Name</label>
+        <input type='text' placeholder='Name' name='songName' value={songName} onChange={(event) => this.handleChange(event)} />
+        <label htmlFor='songArtist'>Song Artist</label>
+        <input type='text' placeholder='Artist' name='songArtist' value={songArtist} onChange={(event) => this.handleChange(event)} />
+        <label htmlFor='songLink'>Song Link</label>
+        <input type='text' placeholder='Link' name='songLink' value={songLink} onChange={(event) => this.handleChange(event)} />
         <button>Add Song</button>
       </form>
     );
