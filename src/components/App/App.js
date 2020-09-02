@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import SongController from '../SongController/SongController';
 import Playlist from '../Playlist/Playlist';
+import SongForm from '../Song-Form/Song-From';
 import { getPlaylist } from '../apiCalls';
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
         </header>
         <div className='App-background'>
           <main>
+            <SongForm />
             {error && <h1>{error}</h1>}
             <Playlist songs={songQueue} />
           </main>
